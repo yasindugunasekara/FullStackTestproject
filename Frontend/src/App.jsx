@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import StudentHome from "./pages/StudentHome";
+import AdminHome from "./pages/AdminHome";
+import Login from "./pages/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <p>Hello from the frontend!</p>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/student" element={<StudentHome />} />
+        <Route path="/admin" element={<AdminHome />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
